@@ -1,0 +1,40 @@
+package com.cognixia.jump.corejava.enums;
+
+import java.util.Scanner;
+
+import com.cognixia.jump.corejava.enums.Student.Grade;
+
+public class SwitchesWithEnum {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Grade g;
+		
+		while(true) {
+			
+			try {
+				System.out.println("What is your grade? (1-5)");
+				
+				
+				Grade[] gradeList = Grade.values();
+				
+				for(int i = 0; i < Grade.values().length; i++) {
+					System.out.println((i + 1) + ".) " + gradeList[i]);
+				}
+				
+				String choice = sc.nextLine().toUpperCase().trim();
+				
+				g = Grade.valueOf(choice);
+			} catch(IllegalArgumentException e) {
+				System.out.println("invalid choice");
+			}
+		
+		}
+	
+	
+		
+		
+	}
+
+}
